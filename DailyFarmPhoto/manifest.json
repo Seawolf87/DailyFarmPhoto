@@ -6,5 +6,5 @@
   "UniqueID": "Seawolf.DailyFarmPhoto",
   "EntryDll": "DailyFarmPhoto.dll",
   "MinimumApiVersion": "3.0.1",
-  "UpdateKeys": []
+  "UpdateKeys": [ "Nexus:4791" ]
 }
