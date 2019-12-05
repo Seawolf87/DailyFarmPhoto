@@ -65,11 +65,13 @@ namespace DailyFarmPhoto
         private void OnDayEnding(object sender, DayEndingEventArgs e)
         {
             screenshotTaken = false;
+            takeShot = false;
         }
 
         private void OnDayStarted(object sender, DayStartedEventArgs e)
         {
             screenshotTaken = false;
+            takeShot = false;
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
