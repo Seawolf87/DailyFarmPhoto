@@ -1,7 +1,7 @@
 ﻿{
   "Name": "DailyFarmPhoto",
   "Author": "Seawolf",
-  "Version": "0.2-millerscout",
+  "Version": "0.2",
   "Description": "This mod snaps a photo of your farm every day automatically",
   "UniqueID": "Seawolf.DailyFarmPhoto",
   "EntryDll": "DailyFarmPhoto.dll",
