@@ -27,6 +27,9 @@ namespace DailyFarmPhoto
                     "StardewValley"),
                     "Screenshots"));
 
+            if (!Directory.Exists(fileDumpPath))
+                Directory.CreateDirectory(fileDumpPath);
+
             this.config = helper.ReadConfig<ModConfig>();
 
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
@@ -52,12 +55,14 @@ namespace DailyFarmPhoto
 
         private void OnOneSecondUpdateTicked(object sender, OneSecondUpdateTickedEventArgs e)
         {
-            if (!screenshotTaken && takeShot && Game1.timeOfDay >= config.TakeScreenshotAfter) {
+            if (!screenshotTaken && takeShot && Game1.timeOfDay >= config.TakeScreenshotAfter)
+            {
                 takeShot = false;
-                
+
                 var filename = GetFarmName() + "_Year" + Game1.Date.Year + "_Season" + Game1.Date.SeasonIndex + "_Day" + Game1.Date.DayOfMonth + "_Time" + Game1.timeOfDay;
-                
-                Game1.game1.takeMapScreenshot(config.Resolution / 100f, filename);
+
+                Game1.game1.takeMapScreenshot(config.Resolution / 100f, filename, () => { });
+
                 screenshotTaken = true;
             }
         }
